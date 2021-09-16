@@ -7,5 +7,6 @@ const postRoutes = require('./postRoutes');
 
 router.use('/user', userRoutes);
 router.use('/restaurants', postRoutes);
+router.use('/login', postRoutes);
 
 module.exports = router;

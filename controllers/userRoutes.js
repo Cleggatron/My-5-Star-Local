@@ -14,7 +14,7 @@ router.get('/', withAuth, async function(req , res) {
     });
     
     const currentUser = await findUser.get({ plain: true });
-    
+
 // gets restaurants user added
     const restaurantData = await Restaurant.findAll({
         order: [['date_created', 'DESC'], 
@@ -43,7 +43,7 @@ router.get('/', withAuth, async function(req , res) {
     );
 
     console.log(JSON.stringify(userRestaurants));
-    res.render('dashboardPosts', { userRestaurants, 
+    res.render('', { userRestaurants, 
         logged_in: req.session.logged_in, currentUser});
 
 });

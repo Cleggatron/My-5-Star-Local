@@ -6,7 +6,7 @@ const { Op } = require("sequelize");
 // "/" route handlers
 
 
-// get all 
+// get all by name search 
 router.get('/nameSearch', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
       order: [['rating', 'DESC']],
@@ -21,12 +21,12 @@ router.get('/nameSearch', withAuth, async function (req, res) {
     const restaurants = restaurantData.map((eachRest) => 
     eachRest.get({ plain: true })
     );
-    res.render('home', { restaurants,
+    res.render('homepage', { restaurants,
         logged_in: req.session.logged_in });
 });
 
 
-// find by address
+// find all
 router.get('/', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
       order: [['rating', 'DESC']],
@@ -36,17 +36,37 @@ router.get('/', withAuth, async function (req, res) {
     const restaurants = restaurantData.map((eachRest) => 
     eachRest.get({ plain: true })
     );
-    res.render('home', { restaurants,
+    res.render('homepage', { restaurants,
+        logged_in: req.session.logged_in });
+});
+
+// find by address
+router.get('/', withAuth, async function (req, res) {
+    const restaurantData = await Restaurant.findAll({
+      order: [['rating', 'DESC']],
+      where: {
+        location: {
+           [Op.substring]: req.body.location, 
+        },
+    },
+    });
+
+    // TODO: add 'if' statements to choose what to sort by 
+    const restaurants = restaurantData.map((eachRest) => 
+    eachRest.get({ plain: true })
+    );
+    res.render('homepage', { restaurants,
         logged_in: req.session.logged_in });
 });
 
 
-
-
 //get by ID
 router.get('/restaurant/:id', withAuth, async function (req, res) {
-    const restaurantData = await Posts.findByPk( req.params.id, {
+    const restaurantData = await Restaurant.findAll({
       order: [[Review,'date_created', 'DESC']],
+      where: {
+          id: req.params.id,
+      },
         include: [
             {
                 model: Review,
@@ -61,12 +81,13 @@ router.get('/restaurant/:id', withAuth, async function (req, res) {
 
     // maybe add sort by review?
 
-    const restaurants = restaurantData.get({ plain: true });
+    const restaurants = restaurantData.map((eachRest) => 
+    eachRest.get({ plain: true })
+    );
 
     console.log(JSON.stringify(restaurants));
-    res.render('restaurantpageview', { restaurants , 
+    res.render('restaurantPage', { restaurants , 
         logged_in: req.session.logged_in, });
-
 
 });
 
@@ -76,7 +97,6 @@ router.get('/login', (req, res) => {
       res.redirect('/');
       return;
     }
-
     res.render('login');
   });
 
