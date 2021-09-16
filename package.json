@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Cleggatron/Project2#readme",
   "dependencies": {
+    "moment": "^2.29.1",
     "sequelize": "^6.6.5"
   }
 }

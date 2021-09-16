@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { User, Restaurant, Review } = require('../models');
-// const withAuth = require('../util/auth');
+const withAuth = require('../util/auth');
 
 // /restaurant
 
 
 // gets all restaurants
-router.get('/', async function(req , res) {
+router.get('/', withAuth, async function(req , res) {
     const findUser = await User.findOne({
         where: {
             id: req.session.user_id,
@@ -14,6 +14,7 @@ router.get('/', async function(req , res) {
     });
     
     const currentUser = await findUser.get({ plain: true });
+    
 // gets restaurants user added
     const restaurantData = await Restaurant.findAll({
         order: [['date_created', 'DESC'], 
