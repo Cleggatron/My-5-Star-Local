@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Cleggatron/Project2/issues"
   },
-  "homepage": "https://github.com/Cleggatron/Project2#readme"
+  "homepage": "https://github.com/Cleggatron/Project2#readme",
+  "dependencies": {
+    "sequelize": "^6.6.5"
+  }
 }
