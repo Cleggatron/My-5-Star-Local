@@ -17,7 +17,7 @@ Review.init(
       autoIncrement: true
     },
     text: {
-        type: sequelize.TEXT(long),
+        type: DataTypes.TEXT,
         allowNull: true,
     },
     rating: {
