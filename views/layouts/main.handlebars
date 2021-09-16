@@ -13,15 +13,29 @@
     <header>
         <h1>Page Title</h1>
         <a href="/">Home</a>
-        {{#if logged_in}}
-        <a href="">My Restaurants</a>
-        <button>Logout</button>
-        {{else}}
         <a href="">Login</a>
-        {{/if}}
+        <a href="">Logout</a>
     </header>
-    
-    {{{body}}}
+
+    <div>
+        <aside>
+            <h2>Restaurant Search:</h2>
+            <br>
+            <form action="submit">
+                <label for="nameSearch">Restaurant Name:</label>
+                <br>
+                <input type="text" placeholder="Search by name">
+                <br>
+                <label for="locationSearch">Location Search: </label>
+                <br>
+                <input type="text" placeholder="Search by location">
+                <br>
+                <button type="submit">Search</button>
+            </form>
+        </aside>
+
+        {{{body}}}
+    </div>
 
 <!--To Do: Add javascript scripts -->
 </body>
