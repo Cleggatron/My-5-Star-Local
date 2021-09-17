@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Restaurant, Review } = require("../models");
 const { Op } = require("sequelize");
-// const withAuth = require("../util/auth");
+const withAuth = require("../util/auth");
 
 // "/" route handlers
 
@@ -29,7 +29,6 @@ router.get('/nameSearch', withAuth, async function (req, res) {
 // find all
 router.get('/', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
-      order: [['rating', 'DESC']],
     });
 
     // TODO: add 'if' statements to choose what to sort by 
