@@ -17,8 +17,6 @@ router.get('/', withAuth, async function(req , res) {
 
 // gets restaurants user has added
     const restaurantData = await Restaurant.findAll({
-        order: [['date_created', 'DESC'], 
-    ],
         where: {
              user_id: req.session.user_id,
         },
