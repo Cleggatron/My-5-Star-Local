@@ -60,8 +60,9 @@ router.get('/', withAuth, async function (req, res) {
 
 
 //get by ID
-router.get('/restaurant/:id', withAuth, async function (req, res) {
-    const restaurantData = await Restaurant.findByPk(req.params.id, {
+router.get('/restaurant/:id', withAuth, async function (req, res) {  
+  //nested include links the reviewers names to their reviews
+  const restaurantData = await Restaurant.findByPk(req.params.id, {
       include: {
         model: Review, 
         attributes: ["text", "rating"],
@@ -73,11 +74,8 @@ router.get('/restaurant/:id', withAuth, async function (req, res) {
     })
 
     const restaurant = restaurantData.get({ plain: true });
-
-    console.log(JSON.stringify(restaurant));
     res.render('restaurantPage', { restaurant , 
         logged_in: req.session.logged_in, });
-
 });
 
 
