@@ -21,6 +21,8 @@ User.hasMany(Restaurant, {
 });
 
 
+
+
 module.exports = {
     User,
     Restaurant,

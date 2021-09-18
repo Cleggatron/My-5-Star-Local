@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Restaurant, Review } = require('../models');
 const withAuth = require('../util/auth');
 
-// /restaurant
+// /dashboard 
 
 
 // gets all restaurants
@@ -15,7 +15,7 @@ router.get('/', withAuth, async function(req , res) {
     
     const currentUser = await findUser.get({ plain: true });
 
-// gets restaurants user added
+// gets restaurants user has added
     const restaurantData = await Restaurant.findAll({
         order: [['date_created', 'DESC'], 
     ],
@@ -24,12 +24,12 @@ router.get('/', withAuth, async function(req , res) {
         },
         include: [
             {
-              model: Users,
+              model: User,
               attributes: ['name'],
             },
             {
-                model: Comments,
-                include: [Users],
+                model: Review,
+                include: [User],
                 attributes: {
                     exclude: ['password'],
                 }
@@ -43,7 +43,8 @@ router.get('/', withAuth, async function(req , res) {
     );
 
     console.log(JSON.stringify(userRestaurants));
-    res.render('', { userRestaurants, 
+
+    res.render('dashboard', { restaurants: userRestaurants, 
         logged_in: req.session.logged_in, currentUser});
 
 });
