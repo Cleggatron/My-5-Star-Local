@@ -7,12 +7,11 @@ const withAuth = require("../util/auth");
 
 
 // get all by name search 
-router.get('/nameSearch', withAuth, async function (req, res) {
+router.get('/name/:name', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
-      order: [['rating', 'DESC']],
       where: {
           name: {
-             [Op.substring]: req.body.name, 
+             [Op.substring]: req.params.name, 
           },
       },
     });
@@ -39,13 +38,13 @@ router.get('/', withAuth, async function (req, res) {
         logged_in: req.session.logged_in });
 });
 
-// find by address
-router.get('/', withAuth, async function (req, res) {
+// find by address use req.params
+router.get('/location/:location', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
       order: [['rating', 'DESC']],
       where: {
         location: {
-           [Op.substring]: req.body.location, 
+           [Op.substring]: req.params.location, 
         },
     },
     });
