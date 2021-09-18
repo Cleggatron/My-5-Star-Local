@@ -34,6 +34,8 @@ Restaurant.belongsTo(User, {
 });
 
 
+
+
 module.exports = {
     User,
     Restaurant,
