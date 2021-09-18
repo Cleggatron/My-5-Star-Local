@@ -18,7 +18,7 @@ router.get('/', withAuth, async function(req , res) {
 // gets restaurants user has added
     const restaurantData = await Restaurant.findAll({
         where: {
-             user_id: req.session.user_id,
+             owner_id: req.session.user_id,
         },
         include: [
             {
@@ -41,6 +41,7 @@ router.get('/', withAuth, async function(req , res) {
     );
 
     console.log(JSON.stringify(userRestaurants));
+    console.log(req.session.user_id);
 
     res.render('dashboard', { restaurants: userRestaurants, 
         logged_in: req.session.logged_in, currentUser});

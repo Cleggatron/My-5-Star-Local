@@ -1,6 +1,4 @@
 //Hannde all our requests here
-const restaurantForm = document.getElementById("new-restaurant-form");
-const formToggleEl = document.getElementById("newRestaurantToggle");
 
 const createRestaruant = async (event) => {
     event.preventDefault();
@@ -44,5 +42,13 @@ const toggleVisibility = (event) => {
     }
 }
 
-restaurantForm.addEventListener("submit", createRestaruant);
-formToggleEl.addEventListener("click", toggleVisibility);
+if (document.getElementById("new-restaurant-form")){
+    const restaurantForm = document.getElementById("new-restaurant-form");
+    restaurantForm.addEventListener("submit", createRestaruant);
+}
+
+if (document.getElementById("newRestaurantToggle")){
+    const formToggleEl = document.getElementById("newRestaurantToggle");
+    formToggleEl.addEventListener("click", toggleVisibility);
+
+}

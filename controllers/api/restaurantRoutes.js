@@ -8,7 +8,7 @@ router.post("/", async (req, res) => {
   try {
     const newRestaurant = await Restaurant.create({
       ...req.body,
-      user_id: req.session.user_id,
+      owner_id: req.session.user_id,
     });
 
     res.status(200).json(newRestaurant);
