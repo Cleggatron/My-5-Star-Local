@@ -1,0 +1,35 @@
+<div>
+    <div>
+        <h2>{{restaurant.name}}</h2>
+        <p>About Us: {{restaurant.bio}}</p>
+        <p>Located at: {{restaurant.location}}</p>
+        <a href="{{restaurant.website}}">Our Webpage</a>
+    </div>
+    <div>
+        {{#each restaurant.Reviews as |review|}}
+            {{>review}}
+        {{/each}}
+    </div>
+
+    <div>
+        <h2>Leave your review</h2>
+        <form action="submit">
+            <label for="reviewText">Your comments:</label>
+            <br>
+            <textarea name="reviewText" id="reviewText"></textarea>
+            <br>
+            <label for="reviewScore">Rating:</label>
+            <br>
+            <select name="reviewScore" id="reviewScore">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
