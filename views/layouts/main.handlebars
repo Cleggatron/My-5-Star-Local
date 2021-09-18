@@ -23,14 +23,17 @@
         <aside>
             <h2>Restaurant Search:</h2>
             <br>
-            <form action="submit">
+            <form action="submit" id = 'nameSearchForm'>
                 <label for="nameSearch">Restaurant Name:</label>
                 <br>
-                <input type="text" placeholder="Search by name">
+                <input type="text" placeholder="Search by name" id="nameSearch">
                 <br>
+                <button type="submit">Search</button>
+            </form>
+            <form action = 'submit' id = "locSearchForm">
                 <label for="locationSearch">Location Search: </label>
                 <br>
-                <input type="text" placeholder="Search by location">
+                <input type="text" placeholder="Search by location" id="locationSearch">
                 <br>
                 <button type="submit">Search</button>
             </form>
@@ -43,6 +46,7 @@
  {{#if logged_in}}
        <script src="/js/logout.js"></script>
        <script src="/js/dashboard.js"></script>
+        <script src="/js/searchRequests.js"></script>
        {{!-- <script src="/js/posts.js"></script> --}}
     {{else}}
        <script src="/js/login.js"></script>

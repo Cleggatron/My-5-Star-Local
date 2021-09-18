@@ -24,7 +24,7 @@ const createRestaruant = async (event) => {
         })
 
         if(response.ok){
-            location.reload
+            document.location.redirect(`/dashboard`);
         }else{
             alert("Failed to create a new restaurant!")
         }
@@ -50,5 +50,4 @@ if (document.getElementById("new-restaurant-form")){
 if (document.getElementById("newRestaurantToggle")){
     const formToggleEl = document.getElementById("newRestaurantToggle");
     formToggleEl.addEventListener("click", toggleVisibility);
-
 }

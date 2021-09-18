@@ -18,8 +18,10 @@ router.get('/name/:name', withAuth, async function (req, res) {
 
     // TODO: add 'if' statements to choose what to sort by ?
     const restaurants = restaurantData.map((eachRest) => 
-    eachRest.get({ plain: true })
+    eachRest.get({ plain: true }) 
     );
+
+    console.log(restaurants);
     res.render('homepage', { restaurants,
         logged_in: req.session.logged_in });
 });
@@ -41,7 +43,6 @@ router.get('/', withAuth, async function (req, res) {
 // find by address use req.params
 router.get('/location/:location', withAuth, async function (req, res) {
     const restaurantData = await Restaurant.findAll({
-      order: [['rating', 'DESC']],
       where: {
         location: {
            [Op.substring]: req.params.location, 
