@@ -8,6 +8,15 @@ Restaurant.hasMany(Review, {
     onDelete: 'CASCADE',
 })
 
+Review.belongsTo(Restaurant, {
+  foreignKey: 'Restaurant_id',
+});
+
+Review.belongsTo(User, {
+  foreignKey: 'User_id',
+});
+
+
 User.hasMany(Review, {
     foreignKey: 'User_id',
     onDelete: 'CASCADE',
@@ -18,6 +27,10 @@ User.hasMany(Review, {
 User.hasMany(Restaurant, {
   foreignKey: 'User_id',
   onDelete: 'CASCADE',
+});
+
+Restaurant.belongsTo(User, {
+  foreignKey: 'User_id',
 });
 
 
