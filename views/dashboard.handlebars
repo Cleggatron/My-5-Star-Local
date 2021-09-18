@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <button type="button">Add a restaturant</button>
+        <!--CSS to allow hide toggling here-->
+        <div>
+            <form action="submit">
+                <label for="restaurant-name">Name:</label>
+                <br>
+                <input type="text" placeholder="Input the restaurant name here">
+                <br>
+                <label for="location">Location:</label>
+                <br>
+                <input type="text" placeholder="location">
+                <br>
+                <label for="bio">Bio:</label>
+                <br>
+                <textarea></textarea>
+                <br>
+                <label for="website">Website URL:</label>
+                <br>
+                <input type="text" placeholder="www.example.com">
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>    
+    </div>
+
+    <!--Cards Here-->
+    {{#each restaurants as |restaurant|}}
+        {{>restaturant-dash-card}}
+    {{/each}}
+    
+</div>
