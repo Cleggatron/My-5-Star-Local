@@ -1,6 +1,5 @@
 //Hannde all our requests here
 
-
 const createRestaruant = async (event) => {
     event.preventDefault();
 
@@ -53,10 +52,3 @@ if (document.getElementById("newRestaurantToggle")){
     formToggleEl.addEventListener("click", toggleVisibility);
 
 }
-
-
-const formToggleEl = document.getElementById("newRestaurantToggle");
-
-
-
-formToggleEl.addEventListener("click", toggleVisibility);
