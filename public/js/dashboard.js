@@ -24,7 +24,7 @@ const createRestaruant = async (event) => {
         })
 
         if(response.ok){
-            document.location.redirect(`/dashboard`);
+            document.location.replace(`/dashboard`);
         }else{
             alert("Failed to create a new restaurant!")
         }
