@@ -1,5 +1,5 @@
 <div>
-    <div>
+    <div id = "restaurantCard" data-id ="{{restaurant.id}}">
         <h2>{{restaurant.name}}</h2>
         <p>About Us: {{restaurant.bio}}</p>
         <p>Located at: {{restaurant.location}}</p>
@@ -13,7 +13,7 @@
 
     <div>
         <h2>Leave your review</h2>
-        <form action="submit">
+        <form action="submit" id ="reviewForm">
             <label for="reviewText">Your comments:</label>
             <br>
             <textarea name="reviewText" id="reviewText"></textarea>

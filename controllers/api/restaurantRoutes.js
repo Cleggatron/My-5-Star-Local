@@ -13,7 +13,6 @@ router.post("/", async (req, res) => {
 
     res.status(200).json(newRestaurant);
   } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });
@@ -21,7 +20,7 @@ router.post("/", async (req, res) => {
 router.post("/:id", async (req, res) => {
   try {
     const newReview = await Review.create({
-        text: req.body.content,
+        ...req.body,
       user_id: req.session.user_id,
       restaurant_id: req.params.id,
     });
