@@ -1,0 +1,27 @@
+<div>
+    <div>
+        <h2>Edit this Restaurant:</h2>
+        <form action="submit" id="restaurant-update">
+            <label for="restaurant-name">Restaurant Name: </label>
+            <br>
+            <input type="text" value="{{name}}" id="restaurant-name">
+            <br>
+            <label for="restaurant-location">Location: </label>
+            <br>
+            <input type="text" value="{{location}}" id="restaurant-location">
+            <br>
+            <label for="bio">Restaurant Details: </label>
+            <br>
+            <textarea name="bio" id="restaurant-bio" cols="30" rows="10">{{bio}}</textarea>
+            <br>
+            <label for="restaurant-website">Website: </label>
+            <br>
+            <input type="text" value="{{website}}">
+            <br>
+            <button type="submit">Submit Update</button>
+        </form>
+    </div>
+    <div>
+        <button id="restaurant-delete">Delete This Restauant?</button>
+    </div>
+</div>    
