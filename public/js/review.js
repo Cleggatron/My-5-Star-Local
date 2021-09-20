@@ -17,7 +17,7 @@ const addComment = async (event) => {
         alert("You have not entered either a score or a review!\n Please try again!");
         return;
     } else {
-        const response = await fetch("", {
+        const response = await fetch("/api/review", {
             method: "POST",
             body: JSON.stringify({text, rating, restaurant_id}),
             headers: ({"Content=Type" : "application/json"})
