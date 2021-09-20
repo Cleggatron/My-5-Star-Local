@@ -5,6 +5,7 @@
         <p>Located at: {{restaurant.location}}</p>
         <a href="{{restaurant.website}}">Our Webpage</a>
     </div>
+    <h4>Reviews:</h4>
     <div>
         {{#each restaurant.Reviews as |review|}}
             {{>review}}

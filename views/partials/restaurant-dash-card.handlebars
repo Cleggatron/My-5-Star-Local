@@ -1,3 +1,6 @@
+
+
+
 <div class="card">
 <!--Add some dummy details for now -->
     <!--Turn The card into a link that we can click to access indivdually-->
@@ -8,3 +11,9 @@
     <p>{{website}}</p>
     </a>    
 </div>
+
+<h4>Reviews: </h4>
+
+{{#each Reviews as |review|}}
+        {{>review}}
+{{/each}}
