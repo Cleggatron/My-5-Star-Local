@@ -1,10 +1,19 @@
+
+
+
 <div class="card">
 <!--Add some dummy details for now -->
     <!--Turn The card into a link that we can click to access indivdually-->
-    <a href="/restaurant/{{id}}">
+    <a href="/dashboard/{{id}}">
     <h3>{{name}}</h3>
     <p>{{bio}}</p>
     <p>{{location}}</p>
     <p>{{website}}</p>
     </a>    
 </div>
+
+<h4>Reviews: </h4>
+
+{{#each Reviews as |review|}}
+        {{>review}}
+{{/each}}

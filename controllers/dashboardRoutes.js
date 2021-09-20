@@ -57,7 +57,7 @@ router.get('/:id', withAuth, async function (req, res) {
 
     console.log(JSON.stringify(restaurantGetter));
    
-    res.render('res', { postGetter, 
+    res.render('restaurantEdit', { restaurants: restaurantGetter, 
         logged_in: req.session.logged_in, });
 
 });
