@@ -1,8 +1,5 @@
-const moment = require("moment");
-
 module.exports = {
-  format_date: (date) => {
-    return moment(date).format(`DD MM YY`);
+  format_rating: (restaurantRating) => {
+    return restaurantRating.toFixed(2);
     }
   }
-
