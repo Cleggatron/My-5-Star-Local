@@ -1,11 +1,13 @@
 const winston = require("winston");
 
+//allows us to only handle those requests (for http logging)
 const filter = (level) => winston.format((info) => {
-    if(info.level ===level){
+    if(info.level === level){
         return info;
     }
 })();
 
+//order of priority of logging
 const levels = {
     fatal: 0,
     error: 1,
@@ -14,6 +16,7 @@ const levels = {
     debug: 4,
     http: 5,
 };
+
 
 const transports = [
     new winston.transports.File({
