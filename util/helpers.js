@@ -1,5 +1,5 @@
 module.exports = {
-  format_rating: (restaurantRating) => {
-    return restaurantRating.toFixed(2);
+  format_rating: (score) => {
+    return score.toFixed(2);
     }
   }

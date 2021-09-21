@@ -47,8 +47,6 @@ router.get('/', withAuth, async function (req, res) {
     eachRest.get({ plain: true })
     );
 
-    console.log(restaurants);
-
     res.render('homepage', { restaurants,
         logged_in: req.session.logged_in });
 });
@@ -93,7 +91,6 @@ router.get('/restaurant/:id', withAuth, async function (req, res) {
         }
       }
     });
-
 
     const restaurant = restaurantData.get({ plain: true });
     res.render('restaurantPage', { restaurant , 
