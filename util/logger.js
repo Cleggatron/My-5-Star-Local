@@ -20,7 +20,7 @@ const levels = {
 
 const transports = [
     new winston.transports.File({
-        filename: "requests.log",
+        filename: "./logs/requests.log",
         level: "http",
         format: filter("http")
     })
