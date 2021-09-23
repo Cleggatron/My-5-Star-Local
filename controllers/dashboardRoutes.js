@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Restaurant, Review } = require('../models');
 const withAuth = require('../util/auth');
+const {Sequelize} = require("sequelize");
 
 // /dashboard 
 
@@ -18,8 +19,8 @@ router.get('/', withAuth, async function(req , res) {
 // gets restaurants user has added
     const restaurantData = await Restaurant.findAll({
         where: {
-             owner_id: req.session.user_id,
-        },
+            owner_id: req.session.user_id,
+       },
         include: [
             {
               model: User,
@@ -49,7 +50,6 @@ router.get('/', withAuth, async function(req , res) {
 });
 
 
-// for when click on restaurant to get info
 router.get('/:id', withAuth, async function (req, res) {
     const restaurantData  = await Restaurant.findByPk(req.params.id);
 
