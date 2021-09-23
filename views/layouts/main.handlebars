@@ -2,55 +2,99 @@
 <html lang="en">
 
 <!--To Do: Add links to css once built-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page-Title-Here</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Welcome to Restaurant Reviewer!</title>
 </head>
 
 <body>
-    <header>
-        <h1>Page Title</h1>
+    {{!-- <header class="jumbotron">
+        <h1 class="display-3">Welcome to Restaurant Reviewer</h1>
         <a href="/">Home</a>
         <a href="/dashboard">dashboard</a>
 
-        <a id = "login" href="">Login</a>
-        <a id = "logout" style="cursor:pointer">Logout</a>
-    </header>
+        <a id="login" href="">Login</a>
+        <a id="logout" style="cursor:pointer">Logout</a>
+    </header> --}}
 
-    <div>
-        <aside>
-            <h2>Restaurant Search:</h2>
-            <br>
-            <form action="submit" id = 'nameSearchForm'>
-                <label for="nameSearch">Restaurant Name:</label>
-                <br>
-                <input type="text" placeholder="Search by name" id="nameSearch">
-                <br>
-                <button type="submit">Search</button>
-            </form>
-            <form action = 'submit' id = "locSearchForm">
-                <label for="locationSearch">Location Search: </label>
-                <br>
-                <input type="text" placeholder="Search by location" id="locationSearch">
-                <br>
-                <button type="submit">Search</button>
-            </form>
-        </aside>
 
-        {{{body}}}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <a class="navbar-brand text-light" href="#">Welcome to Restaurant Reviewer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active text-light" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-light" href="/dashboard">dashboard</a>
+                <a class="nav-link text-light" href="" id="login">login</a>
+                <a class="nav-link text-light" href="" id="logout" style="cursor:pointer">logout</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm bg-warning mr-5 mt-3 mb-3 border">
+
+                <div class ="border mt-3 border-light border-2">
+                <h2>Restaurant Search:</h2>
+                <br>
+                <form action="submit" id='nameSearchForm'>
+                    <label for="nameSearch">Restaurant Name:</label>
+                    <br>
+                    <input type="text" placeholder="Search by name" id="nameSearch">
+                    <br>
+                    <button type="submit">Search</button>
+                </form>
+                <form action='submit' id="locSearchForm">
+                    <label for="locationSearch">Location Search: </label>
+                    <br>
+                    <input type="text" placeholder="Search by location" id="locationSearch">
+                    <br>
+                    <button type="submit">Search</button>
+                </form>
+                </div>
+                {{{body}}}
+
+                
+                {{#if logged_in}}
+                 <div class ="border mt-3 border-light border-2">
+                <script src="/js/logout.js"></script>
+                <script src="/js/dashboard.js"></script>
+                <script src="/js/searchRequests.js"></script>
+                <script src="/js/review.js"></script>
+                {{else}}
+                <script src="/js/login.js"></script>
+            </div> 
+            <div class="col-sm bg-warning mr-5 mt-3 mb-3 border">
+                Restaurant search results here
+            </div> 
+
+
+        </div>
     </div>
 
-<!--To Do: Add javascript scripts -->
- {{#if logged_in}}
-       <script src="/js/logout.js"></script>
-       <script src="/js/dashboard.js"></script>
-        <script src="/js/searchRequests.js"></script>
-       <script src="/js/review.js"></script>
-    {{else}}
-       <script src="/js/login.js"></script>
-{{/if}}
 
+
+    {{/if}}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
