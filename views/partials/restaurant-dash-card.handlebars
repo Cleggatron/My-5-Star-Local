@@ -4,19 +4,14 @@
 <div class="card ">
 <!--Add some dummy details for now -->
     <!--Turn The card into a link that we can click to access indivdually-->
-    <a class="border border-light border-2 bg-warning text-dark text-decoration-none" href="/dashboard/{{id}}">
+    <a class="border border-light border-2 bg-warning text-dark text-decoration-none" href="/restaurant/{{id}}">
     <h3>{{name}}</h3>
     <p>{{bio}}</p>
     <p>{{location}}</p>
     <p>{{website}}</p>
     <p>rating: {{restaurantRating}}</p>
     </a>    
+    <button href="/dashboard/{{id}}"> Edit </button>
 </div>
 
 {{!-- TODO: one have final css for app, need to update links so retaurant dash card goes to rest page, and add edit button  --}}
-
-<h4>Reviews: </h4>
-
-{{#each Reviews as |review|}}
-        {{>review}}
-{{/each}}
