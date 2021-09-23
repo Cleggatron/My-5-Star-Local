@@ -13,85 +13,63 @@
 </head>
 
 <body>
-    {{!-- <header class="jumbotron">
-        <h1 class="display-3">Welcome to Restaurant Reviewer</h1>
-        <a href="/">Home</a>
-        <a href="/dashboard">dashboard</a>
-
-        <a id="login" href="">Login</a>
-        <a id="logout" style="cursor:pointer">Logout</a>
-    </header> --}}
-
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-        <a class="navbar-brand text-light" href="#">My 5STAR local</a>
+        <a class="navbar-brand text-dark text-dark" href="/"><h2>My 5STAR local </h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active text-light" href="/">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-link text-light" href="/dashboard">dashboard</a>
-                <a class="nav-link text-light" href="" id="login">login</a>
-                <a class="nav-link text-light" href="" id="logout" style="cursor:pointer">logout</a>
+                <a class="nav-link active text-dark font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-dark font-weight-bold" href="/dashboard">Dashboard</a>
+                <a class="nav-link text-dark font-weight-bold" href="" id="logout" style="cursor:pointer">Logout</a>
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </div>
         </div>
     </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-        
-            </div>
-            <div class="col-6 bg-warning mr-5 mt-3 mb-3 border">
-                <div class="border mt-3 border-light border-2">
+    <div class="container rounded mx-auto">
+        <div class="col-12 bg-warning mr-5 mt-3 mb-3 border rounded  w-100">
+            <div class="border mt-3 p-2 border-light rounded border-2" style="">
                     <h2>Restaurant Search:</h2>
-                    <br>
-                    <form action="submit" id='nameSearchForm'>
-                        <label for="nameSearch">Restaurant Name:</label>
+                    <div>
+                    <div>
+                        <form action="submit" id='nameSearchForm'>
+                        <label class="font-weight-bold" for="nameSearch">Search By Restaurant Name:</label>
                         <br>
                         <input type="text" placeholder="Search by name" id="nameSearch">
                         <br>
                         <button type="submit">Search</button>
-                    </form>
+                        </form>
+                    </div>
+                  <div>
                     <form action='submit' id="locSearchForm">
-                        <label for="locationSearch">Location Search: </label>
+                        <label class="font-weight-bold" for="locationSearch">Search By Location: </label>
                         <br>
                         <input type="text" placeholder="Search by location" id="locationSearch">
                         <br>
                         <button type="submit">Search</button>
                     </form>
+                    </div>
                 </div>
+                </div>
+                <br>
+                <br>
+
                 {{{body}}}
 
-
+        </div>
+    </div>
                 {{#if logged_in}}
-                <div class="border mt-3 border-light border-2">
                     <script src="/js/logout.js"></script>
                     <script src="/js/dashboard.js"></script>
                     <script src="/js/searchRequests.js"></script>
                     <script src="/js/review.js"></script>
-                    {{else}}
+                {{else}}
                     <script src="/js/login.js"></script>
-                    {{/if}}
-                    </div>
-                    <div class="col">
-                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                      
-                    </div>
-                    <div class="col-5">
-                    </div>
-                    <div class="col">
-                       
-                    </div>
-                </div>
-            </div>
+                {{/if}}
+
                 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                     crossorigin="anonymous"></script>

@@ -1,9 +1,10 @@
 {{#with restaurants as |restaurant|}}
 
-<div>
+<div class="border rounded p-2">
     <div>
         <h2>Edit this Restaurant:</h2>
-        <form action="submit" id="restaurant-update" data-id ="{{id}}">
+
+        <form action="submit" class="border rounded p-2" style="background-color: #FFE5B4;" id="restaurant-update" data-id ="{{id}}">
             <label for="restaurant-name">Restaurant Name: </label>
             <br>
             <input type="text" value="{{name}}" id="restaurant-name">
@@ -21,10 +22,9 @@
             <input type="text" value="{{website}}" id="restaurant-website">
             <br>
             <button type="submit">Submit Update</button>
+            
+            <button id="restaurant-delete" data-id="{{id}}">Delete This Restauant?</button>
         </form>
-    </div>
-    <div>
-        <button id="restaurant-delete" data-id="{{id}}">Delete This Restauant?</button>
     </div>
 </div>    
 {{/with}}

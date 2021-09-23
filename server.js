@@ -35,8 +35,12 @@ app.use(session(sess));
 
 //custom token to track user id.
 morgan.token("id", function (req, res) {
-  if(req.session.hasOwnProperty("logged_in")){
-    return ("userId: " + req.session.user_id)
+  if(req.session){
+    if(req.session.logged_in){
+      return ("userId: " + req.session.user_id)
+    } else {
+      return "userId: -"
+    }
   }
   else{
     return "userId: -"

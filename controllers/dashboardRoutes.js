@@ -18,6 +18,9 @@ router.get('/', withAuth, async function(req , res) {
 
 // gets restaurants user has added
     const restaurantData = await Restaurant.findAll({
+        attributes : ['id', 'name', 'bio', 'location', 'website', [Sequelize.fn('AVG', Sequelize.col('rating')), 'restaurantRating']],
+      group: ['id'],
+      order:  [[Sequelize.fn('AVG', Sequelize.col('rating')), 'DESC']],
         where: {
             owner_id: req.session.user_id,
        },

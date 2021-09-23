@@ -1,29 +1,32 @@
 <div>
-    <div id = "restaurantCard " class="border mt-3 border-light border-2" data-id ="{{restaurant.id}}">
-        <h2>{{restaurant.name}}</h2>
+    <div id = "restaurantCard " class="p-1 text-decoration-none text-dark border border-light border-2 rounded bg-warning" data-id ="{{restaurant.id}}">
+        <h2 class="text-dark">{{restaurant.name}}</h2>
+        <div class="rounded p-2" style="background-color: #FFE5B4;">
         <p>About Us: {{restaurant.bio}}</p>
         <p>Located at: {{restaurant.location}}</p>
-        <a href="{{restaurant.website}}">Our Webpage</a>
+        <p>Our Webpage:<a href="{{restaurant.website}}"> {{restaurant.website}} </a></p>
         <p>Average score: {{score.restaurantRating}}</p>
+        </div>
         
     </div>
     <h4>Reviews:</h4>
-    <div>
+    <div class = "p-2 border rounded">
         {{#each restaurant.Reviews as |review|}}
             {{>review}}
         {{/each}}
     </div>
 
-    <div>
-        <h2>Leave your review</h2>
+    <div class = "d-inline-flex flex-wrap">
+        <h2 class = "w-100">Leave Your Review:</h2>
         <form action="submit" id ="reviewForm">
             <label for="reviewText">Your comments:</label>
             <br>
             <textarea name="reviewText" id="reviewText"></textarea>
             <br>
-            <label for="reviewScore">Rating:</label>
+            <div class = "d-inline-flex">
+            <label for="reviewScore">Rating: </label>
             <br>
-            <select name="reviewScore" id="reviewScore">
+            <select class ="m-1" name="reviewScore" id="reviewScore">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -31,6 +34,7 @@
                 <option value="5">5</option>
             </select>
             <br>
+            </div>
             <button type="submit">Submit</button>
         </form>
     </div>

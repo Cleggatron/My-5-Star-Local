@@ -1,17 +1,18 @@
 
 
 
-<div class="card ">
+<div class="card border border-light border-2 bg-warning text-dark text-decoration-none p-2">
 <!--Add some dummy details for now -->
     <!--Turn The card into a link that we can click to access indivdually-->
-    <a class="border border-light border-2 bg-warning text-dark text-decoration-none" href="/restaurant/{{id}}">
-    <h3>{{name}}</h3>
-    <p>{{bio}}</p>
-    <p>{{location}}</p>
-    <p>{{website}}</p>
-    <p>rating: {{restaurantRating}}</p>
-    </a>    
-    <button href="/dashboard/{{id}}"> Edit </button>
+    <a class = "text-decoration-none text-dark" href="/restaurant/{{id}}"><h3>{{name}}</h3></a>
+    <div class="rounded p-2" style="background-color: #FFE5B4;"> 
+    <p>Bio: {{bio}}</p>
+    <p>Location: {{location}}</p>
+    <p>Website: <a href="{{website}}">{{website}}</a></p>
+    <p>Average Rating: {{restaurantRating}}</p>
+    <a href="/dashboard/{{id}}"><button> Edit </button></a>
+    </div> 
 </div>
+<br>
 
 {{!-- TODO: one have final css for app, need to update links so retaurant dash card goes to rest page, and add edit button  --}}

@@ -1,9 +1,9 @@
-<div class="border mt-3 border-light border-2">
-    <div>
-        <button id="newRestaurantToggle" type="button">Add a restaturant</button>
+<div >
+    <div class="border rounded  mt-3 border-light border-2">
+        <button id="newRestaurantToggle" class ="m-2" type="button">Click to hide/show section to add restaurant</button>
         <!--CSS to allow hide toggling here-->
-        <div class="border mt-3 border-light border-2">
-            <form id="new-restaurant-form" action="submit">
+        <div class="rounded mt-3 p-2 ">
+            <form class="rounded mt-3 p-2" style="background-color: #FFE5B4;"  id="new-restaurant-form" action="submit">
                 <label for="restaurant-name">Name:</label>
                 <br>
                 <input id="restaurant-name" type="text" placeholder="Input the restaurant name here">
@@ -27,7 +27,7 @@
 
     <!--Cards Here-->
 {{!-- TODO: one have final css for app, need to update links so retaurant dash card goes to rest page, and add edit button  --}}
-    <h3>Restaurants:</h3>
+    <h3 class="p-2" >Restaurants:</h3>
     {{#each restaurants as |restaurant|}}
         {{>restaurant-dash-card}}
     {{/each}}
