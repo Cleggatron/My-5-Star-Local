@@ -1,126 +1,78 @@
-# 15 Project 2: Interactive Full-Stack Application
+# My 5 Star Local
 
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
+  [Project Repo](https://github.com/Cleggatron/My-5-Star-Local)
+  
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+  ## Contributors
+  A [Kevin](https://github.com/kevinjr1998), [Georgia](https://github.com/G-bot987), and [David](https://github.com/Cleggatron) production!
 
-## Project Requirements
+  ## Description
 
-You and your group will use everything you’ve learned over the past six units to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+  This website is a full stack, interactive, collaborative website. It will allow users to post up the details of a local website they enjoy. Other users can then leave text based reviews and ratings, from 1-5. The main page will render the most popular restaurants by average ranking, meaning that users are always directed to popular establishments. 
+  
+  On the backend the website logs analytic data relating to the http requests submitted from the user. This will allow the website owners to monitor the useage of the website. Gathering understanding of the user interactions with the site will allow potential improvements to the site going forwards, and provide feeedback to any interested parties.
 
-* Use Node.js and Express.js to create a RESTful API.
+  ## Table Of Contents
 
-* Use Handlebars.js as the template engine.
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Questions](#questions)
 
-* Use MySQL and the Sequelize ORM for the database.
+  ## Installation
 
-* Have both GET and POST routes for retrieving and adding new data.
+  Once the repo has been cloned locally you can enter the commands `npm i` to install all the dependencies. 
+  
+  To run this locally you will also need to set up a .env file. There is an example of this with the necessary structure to follow. Once this has been created you can create your own seed data in the files in the seeds folder. Once this has been achieved you can initialise the database with the commands `mysql -u root -p` followed by your password, and then entering `source ./db/schema.sql` to get the database running. `npm run seed` will then seed the database, follwed by `npm start` to start the whole project running on localhost 3001.
 
-* Use at least one new library, package, or technology that we haven’t discussed.
+  The website is also set up to run on heroku. Once you ahve pushed it there, you will need to proviion a database for this. This is coded to use JAWSDB.  Once that has been arranged the website should be good to go!
 
-* Have a folder structure that meets the MVC paradigm.
+  ## Usage
 
-* Include authentication (express-session and cookies).
+  ![File In Action]()
 
-* Protect API keys and sensitive information with environment variables.
+  When a user navigates to the webpage they will be redirected to the login/signup screen. Once they have logged in they can go to the main page to see the top rated restaurants. They will have a dashboard option that shows them the restaurants, with the individual comments. Here they will have the option at add a restaurant by filling in the form. If they click on any of the restaurants here they can ammend/update the entry. 
 
-* Be deployed using Heroku (with data).
+  ## Credits 
+  The contributors are:
+ -  David
+ -  Georgia
+ -  Kevin
 
-* Have a polished UI.
 
-* Be responsive.
+  Third Party Technologies:
+  The Third Party Code used:
+ - Bootstrap
+ -  Morgan
+ -  bcrypt
+ -  sequelize
+ -  mysql
+ -  express
+ -  dotenv
+ -  winston
 
-* Be interactive (i.e., accept and respond to user input).
 
-* Meet good-quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+  ## License
+  MIT License
 
-* Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
+  [License Link](https://opensource.org/licenses/MIT)
 
-## Presentation Requirements
+  Copyright <2021> <Georgia, Kevin, and David>
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
+      Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+      
+      The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+      
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.  
 
-* Elevator pitch: a one minute description of your application
+  ## Questions
 
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository. Use the [Guide to Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql) on The Full-Stack Blog if you need a reminder on how to deploy to Heroku.
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-  * Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
-
-  * Application has a folder structure that meets the MVC paradigm and uses Handlebars.js as the template engine.
-
-  * Application is backed by a MySQL database with a Sequelize ORM and protects API keys and sensitive information with environment variables.
-
-  * Application includes user authentication (express-session and cookies).
-
-  * Application uses at least one new library, package, or technology not covered in class.
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL on Heroku and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id-naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using Powerpoint or a similar presentation software.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Full-Stack Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+  If you have any questions feel free to reach out to us. Our Github profiles are:
+  <br>
+  [Kevin](https://github.com/kevinjr1998)
+  <br>
+  [Georgia](https://github.com/G-bot987)
+  <br>
+  [David](https://github.com/Cleggatron)
