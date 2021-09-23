@@ -4,7 +4,7 @@ const RestaurantData = [
     {
         name: 'A test chinese',
         bio: 'A bio of a test chinese',
-        location: 'holy terra',
+        location: 'london',
         website: 'www.goldenthrone.co.uk',
         owner_id: 1,
       },
