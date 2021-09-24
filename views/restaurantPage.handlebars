@@ -1,5 +1,5 @@
 <div>
-    <div id = "restaurantCard " class="p-1 text-decoration-none text-dark border border-light border-2 rounded bg-warning" data-id ="{{restaurant.id}}">
+    <div id = "restaurantCard" class="p-1 text-decoration-none text-dark border border-light border-2 rounded bg-warning" data-id ="{{restaurant.id}}">
         <h2 class="text-dark">{{restaurant.name}}</h2>
         <div class="rounded p-2" style="background-color: #FFE5B4;">
         <p>About Us: {{restaurant.bio}}</p>
@@ -16,9 +16,9 @@
         {{/each}}
     </div>
 
-    <div class = "d-inline-flex flex-wrap">
+    <div class = "d-inline-flex flex-column w-100 flex-wrap">
         <h2 class = "w-100">Leave Your Review:</h2>
-        <form action="submit" id ="reviewForm">
+        <form action="submit" id ="reviewForm" class=" d-inline-flex flex-column w-100">
             <label for="reviewText">Your comments:</label>
             <br>
             <textarea name="reviewText" id="reviewText"></textarea>

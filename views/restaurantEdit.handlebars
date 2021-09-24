@@ -4,7 +4,7 @@
     <div>
         <h2>Edit this Restaurant:</h2>
 
-        <form action="submit" class="border rounded p-2" style="background-color: #FFE5B4;" id="restaurant-update" data-id ="{{id}}">
+        <form action="submit" class="border d-inline-flex flex-column w-100 rounded p-2" style="background-color: #FFE5B4;" id="restaurant-update" data-id ="{{id}}">
             <label for="restaurant-name">Restaurant Name: </label>
             <br>
             <input type="text" value="{{name}}" id="restaurant-name">
@@ -13,7 +13,7 @@
             <br>
             <input type="text" value="{{location}}" id="restaurant-location">
             <br>
-            <label for="bio">Restaurant Details: </label>
+            <label for="bio">About Us:  </label>
             <br>
             <textarea name="bio" id="restaurant-bio" cols="30" rows="10">{{bio}}</textarea>
             <br>
@@ -22,8 +22,8 @@
             <input type="text" value="{{website}}" id="restaurant-website">
             <br>
             <button type="submit">Submit Update</button>
-            
-            <button id="restaurant-delete" data-id="{{id}}">Delete This Restauant?</button>
+            <br>
+            <button id="restaurant-delete" data-id="{{id}}">Delete This Restauant</button>
         </form>
     </div>
 </div>    

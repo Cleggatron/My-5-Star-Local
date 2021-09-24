@@ -14,7 +14,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-        <a class="navbar-brand text-dark text-dark" href="/"><h2>My 5STAR local </h1></a>
+        <a class="navbar-brand text-dark text-dark" href="/"><h2>My 5STAR Local </h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,9 +31,10 @@
 
     <div class="container rounded mx-auto">
         <div class="col-12 bg-warning mr-5 mt-3 mb-3 border rounded  w-100">
+            {{#if logged_in}}
             <div class="border mt-3 p-2 border-light rounded border-2" style="">
                     <h2>Restaurant Search:</h2>
-                    <div>
+                    <div class="rounded p-2" style="background-color:  #fadadd;">
                     <div>
                         <form action="submit" id='nameSearchForm'>
                         <label class="font-weight-bold" for="nameSearch">Search By Restaurant Name:</label>
@@ -56,6 +57,7 @@
                 </div>
                 <br>
                 <br>
+                {{/if}}
 
                 {{{body}}}
 
