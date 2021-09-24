@@ -79,9 +79,11 @@ router.get('/location/:location', withAuth, async function (req, res) {
 //get by ID
 router.get('/restaurant/:id', withAuth, async function (req, res) {  
   const restaurantData = await Restaurant.findByPk(req.params.id, {
+
       include: {
         model: Review, 
         attributes: ["text", "rating"],
+        order: ['rating', 'DESC'],
         include: {
           model: User,
           attributes: ["name"]
