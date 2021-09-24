@@ -44,9 +44,6 @@ router.get('/', withAuth, async function(req , res) {
     eachRest.get({ plain: true })
     );
 
-    console.log(JSON.stringify(userRestaurants));
-    console.log(req.session.user_id);
-
     res.render('dashboard', { restaurants: userRestaurants, 
         logged_in: req.session.logged_in, currentUser});
 
@@ -57,8 +54,6 @@ router.get('/:id', withAuth, async function (req, res) {
     const restaurantData  = await Restaurant.findByPk(req.params.id);
 
     const restaurantGetter = await restaurantData.get({ plain: true });
-
-    console.log(JSON.stringify(restaurantGetter));
    
     res.render('restaurantEdit', { restaurants: restaurantGetter, 
         logged_in: req.session.logged_in, });

@@ -36,7 +36,7 @@ const toggleVisibility = (event) => {
     const form = document.getElementById("new-restaurant-form");
 
     if(form.style.display === "none"){
-        form.style.display ="block"
+        form.style.display ="inline"
     } else {
         form.style.display = "none"
     }

@@ -2,31 +2,33 @@
     <div class="border rounded  mt-3 border-light border-2">
         <button id="newRestaurantToggle" class ="m-2" type="button">Click to hide/show section to add restaurant</button>
         <!--CSS to allow hide toggling here-->
-        <div class="rounded mt-3 p-2 ">
-            <form class="rounded mt-3 p-2" style="background-color: #FFE5B4;"  id="new-restaurant-form" action="submit">
+        <div class="rounded mt-3 p-2 d-inline-flex flex-column w-100">
+            <form class="rounded mt-3 p-2 " style="background-color: #F5F5DC;"  id="new-restaurant-form" action="submit">
+                <h2>Add a Restaurant:</h2>
                 <label for="restaurant-name">Name:</label>
                 <br>
-                <input id="restaurant-name" type="text" placeholder="Input the restaurant name here">
+                <input id="restaurant-name" type="text" placeholder="Input the restaurant name here" style="width: 100%;">
                 <br>
                 <label for="location">Location:</label>
                 <br>
-                <input id="restaurant-location" type="text" placeholder="location">
+                <input id="restaurant-location" type="text"  style="width: 100%;" placeholder="location">
                 <br>
-                <label for="bio">Bio:</label>
+                <label for="bio">About Us: </label>
                 <br>
-                <textarea id="restaurant-bio"></textarea>
+                <textarea style="width: 100%;" id="restaurant-bio"></textarea>
                 <br>
                 <label for="website">Website URL:</label>
                 <br>
-                <input id="restaurant-website" type="text" placeholder="www.example.com">
+                <input style="width: 100%;" id="restaurant-website" type="text" placeholder="www.example.com">
                 <br>
-                <button type="submit">Submit</button>
+                <br>
+                <button style="width: 100%;" type="submit">Submit</button>
             </form>
         </div>    
     </div>
 
     <!--Cards Here-->
-{{!-- TODO: one have final css for app, need to update links so retaurant dash card goes to rest page, and add edit button  --}}
+
     <h3 class="p-2" >Restaurants:</h3>
     {{#each restaurants as |restaurant|}}
         {{>restaurant-dash-card}}
