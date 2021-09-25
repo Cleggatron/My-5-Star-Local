@@ -1,6 +1,8 @@
 # My 5 Star Local
 
   [Project Repo](https://github.com/Cleggatron/My-5-Star-Local)
+
+  [Deployed Website](https://vast-journey-10843.herokuapp.com/login)
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -31,7 +33,11 @@
 
   ## Usage
 
-  ![File In Action]()
+  ![Login Page](./assets/Screenshot1.PNG)
+
+  ![Homepage](./assets/Screenshot2.PNG)
+
+  ![Dashboard Page](./assets/Screenshot3.PNG)
 
   When a user navigates to the webpage they will be redirected to the login/signup screen. Once they have logged in they can go to the main page to see the top rated restaurants. They will have a dashboard option that shows them the restaurants, with the individual comments. Here they will have the option at add a restaurant by filling in the form. If they click on any of the restaurants here they can ammend/update the entry. 
 
